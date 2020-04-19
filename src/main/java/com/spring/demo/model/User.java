@@ -7,7 +7,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 
-@Data
 public class User implements UserDetails {
     private int id;
     private String username;
@@ -15,6 +14,46 @@ public class User implements UserDetails {
     private int enabled;
     private String roles;
     private List<GrantedAuthority> authoritys;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public int getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(int enabled) {
+        this.enabled = enabled;
+    }
+
+    public String getRoles() {
+        return roles;
+    }
+
+    public void setRoles(String roles) {
+        this.roles = roles;
+    }
+
+    public List<GrantedAuthority> getAuthoritys() {
+        return authoritys;
+    }
+
+    public void setAuthoritys(List<GrantedAuthority> authoritys) {
+        this.authoritys = authoritys;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
